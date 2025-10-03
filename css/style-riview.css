@@ -1,0 +1,253 @@
+/* style-review.css */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Merriweather:wght@400;700&display=swap');
+
+:root {
+    --primary-dark: #121212; 
+    --secondary-dark: #1e1e1e; 
+    --accent-color: #E50914; 
+    --text-light: #F5F5F5;
+    --text-muted: #AAAAAA;
+    --stat-color: #00bcd4; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--primary-dark);
+    color: var(--text-light);
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-light);
+}
+
+/* Header Studio (Sama seperti halaman editor) */
+.studio-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+.studio-header .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+.header-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.action-btn, .final-publish-btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.back-btn {
+    background-color: var(--secondary-dark);
+    color: var(--text-light);
+}
+
+.back-btn:hover {
+    background-color: #333;
+}
+
+.final-publish-btn {
+    background-color: var(--accent-color);
+    color: var(--text-light);
+    font-weight: 700;
+}
+
+.final-publish-btn:hover {
+    background-color: #f40612;
+}
+
+
+/* Kontainer Utama Review */
+.review-container {
+    display: flex;
+    padding: 3rem 4%;
+    gap: 30px;
+}
+
+/* Panel Tinjauan (Pratinjau) */
+.preview-panel {
+    flex: 2; 
+    min-width: 60%;
+}
+
+.story-preview-box {
+    background-color: var(--secondary-dark);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.story-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #333;
+}
+
+.profile-pic {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+    border: 3px solid var(--accent-color);
+}
+
+.story-header .info h2 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+    color: var(--accent-color);
+}
+
+.story-header .info .author {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.story-content-display {
+    line-height: 1.8;
+    font-family: 'Merriweather', serif; 
+}
+
+.story-synopsis {
+    background-color: #252525;
+    padding: 15px;
+    border-left: 4px solid #444;
+    margin-bottom: 20px;
+    font-style: italic;
+    color: var(--text-muted);
+}
+
+.chapter-title {
+    font-size: 1.5rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: var(--text-light);
+}
+
+/* Reaksi Pembaca */
+.reader-reactions {
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px solid #333;
+}
+
+.stats-line span {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-right: 15px;
+}
+
+/* Panel Statistik & Kontrol */
+.stats-panel {
+    flex: 1; 
+    background-color: var(--secondary-dark);
+    padding: 25px;
+    border-radius: 8px;
+    height: fit-content; 
+    position: sticky; 
+    top: 20px;
+}
+
+.stats-panel h3 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    color: var(--stat-color);
+}
+
+.stat-card {
+    background-color: #2a2a2a;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+}
+
+.stat-card h4 {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 5px;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--stat-color);
+}
+
+.live-stat-card {
+    border-left: 5px solid var(--accent-color);
+    padding: 15px 15px 15px 20px;
+    margin-bottom: 25px;
+}
+
+.publish-controls {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+}
+
+.publish-controls h4 {
+    color: var(--text-light);
+    margin-bottom: 15px;
+}
+
+.publish-controls label {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    color: var(--text-muted);
+}
+
+.publish-controls input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+    accent-color: var(--accent-color);
+}
+
+.full-width {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.save-draft-btn {
+    background-color: #444;
+    color: var(--text-light);
+}
+
+/* Responsiveness */
+@media (max-width: 900px) {
+    .review-container {
+        flex-direction: column;
+    }
+    .stats-panel {
+        width: 100%;
+        position: static;
+    }
+    .studio-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+}

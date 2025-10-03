@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+    function generatePDF() {
+        // 1. Ambil elemen yang ingin dijadikan konten PDF
+        // Di sini kita gunakan editor-area sebagai contoh
+        const element = document.getElementById('story-editor');
+
+        // 2. Tentukan opsi PDF
+        const options = {
+            margin: 1,
+            filename: 'Cerita_Baru.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 2 },
+            jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+        };
+
+        // 3. Panggil fungsi generatePDF
+        html2pdf().set(options).from(element).save();
+
+        // Opsional: Redirect ke halaman review setelah generate
+        // window.location.href = 'review-publish.html';
+    }
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio Penulis - Tulis Cerita</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style-studio.css">
+</head>
+<body>
+    <header class="studio-header">
+        <a href="index.html" class="logo">HI **READ** Studio</a>
+        <div class="header-actions">
+    <button class="action-btn save-btn">Simpan Otomatis</button>
+    <button class="action-btn publish-btn" onclick="generatePDF()">Publikasikan sebagai PDF</button>
+</div>
+    </header>
+    <main class="studio-container">
+        <aside class="sidebar">
+            <h3>Pengaturan Naskah</h3>
+            <div class="setting-group"><label for="judul">Judul Cerita</label><input type="text" id="judul" placeholder="Masukkan judul yang menarik"></div>
+            <div class="setting-group">
+                <label for="genre">Genre Utama</label>
+                <select id="genre"><option value="fantasi">Fantasi</option><option value="romantis">Romantis</option><option value="horor">Horor</option></select>
+            </div>
+            <div class="setting-group"><label for="sinopsis">Sinopsis Singkat</label><textarea id="sinopsis" rows="4" placeholder="Jelaskan ceritamu dalam 1-2 paragraf..."></textarea></div>
+            <div class="export-box">
+                <h4>Ekspor & Berbagi</h4>
+                <p>Simpan cuplikan teks Anda sebagai poster gambar untuk dibagikan.</p>
+                <button class="export-btn image-export-btn">⬇ Ekspor Teks ke Gambar</button>
+            </div>
+        </aside>
+        <section class="editor-area">
+            <div class="editor-toolbar">
+                <button title="Tebal">B</button><button title="Miring">I</button><button title="Garis Bawah">U</button>
+            </div>
+            <textarea id="story-editor" placeholder="Mulai menulis bab pertama Anda di sini..." autofocus></textarea>
+        </section>
+    </main>
+</body>
+</html>

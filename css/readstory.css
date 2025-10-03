@@ -1,0 +1,269 @@
+/* style-read.css - MODIFIED FOR PDF VIEWER SIMULATION */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Merriweather:wght@400;700&display=swap');
+
+:root {
+    --primary-dark: #121212; 
+    --secondary-dark: #1e1e1e; 
+    --accent-color: #E50914; 
+    --text-light: #F5F5F5;
+    --text-muted: #AAAAAA;
+    --interaction-color: #00bcd4; 
+    --page-bg: #1c1c1c; /* Warna latar belakang halaman (lebih terang dari body) */
+    --border-paper: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--primary-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-light);
+}
+
+/* Header Navigasi Chapter (Tetap di bagian atas) */
+.read-header {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 1rem 4%;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    border-bottom: 1px solid #333;
+}
+/* ... (Gaya header lainnya sama seperti sebelumnya) ... */
+.header-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.back-btn {
+    font-weight: 600;
+    color: var(--text-muted);
+    transition: color 0.3s;
+}
+.back-btn:hover {
+    color: var(--accent-color);
+}
+.chapter-nav {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.nav-btn {
+    background-color: var(--secondary-dark);
+    color: var(--text-light);
+    border: 1px solid #444;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.nav-btn:hover:not(:disabled) {
+    background-color: #333;
+}
+.nav-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+.chapter-dropdown {
+    padding: 8px 10px;
+    background-color: #333;
+    color: var(--text-light);
+    border: none;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* ======================================= */
+/* PERUBAHAN UTAMA: SIMULASI PDF VIEWER */
+/* ======================================= */
+
+.read-container {
+    /* MENGATUR CONTAINER UTAMA SEPERTI KERTAS / PAGE */
+    max-width: 800px; /* Lebar 'kertas' */
+    margin: 2rem auto; /* Margin atas-bawah besar, dan tengah */
+    padding: 0;
+    background-color: var(--page-bg); 
+    border-radius: 4px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7); /* Bayangan untuk efek 'mengambang' */
+}
+
+/* Bagian Intro Buku (Cover & Judul) - Disajikan di atas halaman baca */
+.book-intro {
+    text-align: center;
+    padding: 40px; /* Padding di dalam 'kertas' */
+    border-bottom: 1px solid var(--border-paper);
+    margin-bottom: 0; /* Hapus margin bawah */
+}
+
+.book-cover-title {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.book-cover {
+    width: 200px; /* Ukuran cover diperkecil */
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    border: 3px solid var(--accent-color);
+}
+/* ... (Gaya detail judul lainnya tetap sama) ... */
+.title-details h1 {
+    font-size: 2.2rem;
+    color: var(--text-light);
+    margin-bottom: 5px;
+}
+.author-info a {
+    color: var(--interaction-color);
+    font-weight: 600;
+}
+.rating-info {
+    color: gold;
+    font-weight: 600;
+    margin-top: 5px;
+}
+.book-synopsis p {
+    color: var(--text-muted);
+    font-style: italic;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0;
+    line-height: 1.6;
+}
+
+
+/* Bagian Cerita (Konten Utama) */
+.story-content {
+    /* HANYA MENGATUR PADDING KARENA LEBAR SUDAH DIATUR .read-container */
+    padding: 40px;
+    margin-bottom: 0;
+    border-bottom: 1px solid var(--border-paper);
+}
+
+.chapter-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.story-text p {
+    font-family: 'Merriweather', serif; 
+    font-size: 1.1rem; /* Ukuran font lebih mudah dibaca */
+    line-height: 1.8; /* Spasi baris yang nyaman */
+    margin-bottom: 1.5em;
+    color: var(--text-light);
+}
+
+.end-of-chapter {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+/* Fitur Interaksi (Like & Komentar) - Di bagian bawah 'kertas' */
+.story-interactions {
+    padding: 30px 40px; 
+    background-color: var(--page-bg); /* Menggunakan warna yang sama agar terlihat menyatu */
+    border-radius: 0 0 8px 8px; /* Hanya sudut bawah yang membulat */
+    margin-bottom: 0;
+    border-top: none; /* Hapus garis batas atas */
+}
+
+.like-share-bar {
+    /* ... (Gaya ini sama) ... */
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+/* ... (Gaya tombol interaksi lainnya tetap sama) ... */
+.interaction-btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 50px; 
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.like-btn {
+    background-color: var(--accent-color);
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
+.share-btn {
+    background-color: #444;
+    color: var(--text-light);
+}
+
+/* Komentar */
+.comment-section h3 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #444;
+    padding-bottom: 10px;
+}
+
+/* ... (Gaya komponen komentar lainnya tetap sama) ... */
+.comment-input textarea {
+    background-color: #2a2a2a; 
+    border: 1px solid #444;
+}
+
+/* Responsiveness */
+@media (max-width: 900px) {
+    .read-container {
+        /* Mengisi lebih banyak layar di perangkat kecil */
+        max-width: 95%; 
+        margin: 1rem auto;
+    }
+}
+@media (max-width: 600px) {
+    .read-header {
+        padding: 1rem 2%;
+    }
+    .header-controls {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .chapter-nav {
+        width: 100%;
+        justify-content: space-between;
+    }
+    .nav-btn {
+        padding: 8px 10px;
+    }
+    .book-intro, .story-content, .story-interactions {
+        padding: 20px; /* Padding lebih kecil untuk ponsel */
+    }
+    .title-details h1 {
+        font-size: 1.8rem;
+    }
+    .story-text p {
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+}

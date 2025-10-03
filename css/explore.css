@@ -1,0 +1,210 @@
+/* style-explore.css */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap');
+
+:root {
+    --primary-dark: #141414;
+    --secondary-dark: #222222;
+    --accent-color: #E50914; 
+    --text-light: #F5F5F5;
+    --text-muted: #AAAAAA;
+    --border-color: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--primary-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-light);
+}
+
+/* Header (Sama seperti utama) */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 4%;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--accent-color);
+}
+
+.logo strong {
+    color: var(--text-light);
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.main-nav a {
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: var(--accent-color);
+}
+
+.cta-button {
+    background-color: var(--accent-color);
+    color: var(--text-light) !important;
+    padding: 8px 18px;
+    border-radius: 4px;
+    font-weight: 700;
+}
+
+/* Container Utama */
+.explore-container {
+    padding: 2rem 4%;
+}
+
+/* Banner Top Rating */
+.top-rating-banner {
+    background: linear-gradient(90deg, #1c1c1c, #141414);
+    border-left: 5px solid var(--accent-color);
+    padding: 30px;
+    border-radius: 4px;
+    margin-bottom: 2rem;
+}
+
+.top-rating-banner .subtitle {
+    color: var(--accent-color);
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.top-rating-banner h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.top-rating-banner .description {
+    color: var(--text-muted);
+}
+
+/* Filter Bar */
+.filter-bar {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 2rem;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.filter-group label {
+    font-weight: 600;
+    margin-right: 10px;
+    color: var(--text-muted);
+}
+
+.dark-select {
+    padding: 8px 15px;
+    background-color: var(--secondary-dark);
+    color: var(--text-light);
+    border: 1px solid #444;
+    border-radius: 4px;
+    font-size: 1rem;
+    outline: none;
+    cursor: pointer;
+}
+
+/* Galeri Cerita (Grid) */
+.story-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+    gap: 20px;
+}
+
+.story-card {
+    background-color: var(--secondary-dark);
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.story-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+}
+
+.story-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.card-info {
+    padding: 15px;
+}
+
+.card-info .title {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: var(--text-light);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-info .author {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+}
+
+.card-info .rating {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: gold;
+}
+
+/* Penekanan untuk Kartu Top Rating */
+.top-rating-card {
+    border: 2px solid var(--accent-color);
+    box-shadow: 0 0 15px rgba(229, 9, 20, 0.5);
+}
+
+/* Responsiveness */
+@media (max-width: 1200px) {
+    .story-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .story-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+    .top-rating-banner h1 {
+        font-size: 2rem;
+    }
+    .filter-bar {
+        flex-direction: column;
+    }
+    .filter-group {
+        width: 100%;
+    }
+}

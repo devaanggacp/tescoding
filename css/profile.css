@@ -1,0 +1,259 @@
+/* style-profile.css */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap');
+
+:root {
+    --primary-dark: #141414;
+    --secondary-dark: #222222; 
+    --accent-color: #E50914; 
+    --text-light: #F5F5F5;
+    --text-muted: #AAAAAA;
+    --border-color: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--primary-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-light);
+}
+
+/* Header (Sama seperti utama) */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 4%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 10;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--accent-color);
+}
+
+.logo strong {
+    color: var(--text-light);
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.main-nav a {
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: var(--accent-color);
+}
+
+/* Tombol CTA (di nav) */
+.cta-button {
+    background-color: var(--accent-color);
+    color: var(--text-light) !important;
+    padding: 8px 18px;
+    border-radius: 4px;
+    font-weight: 700;
+    transition: background-color 0.3s;
+}
+
+/* Container Utama Profil */
+.profile-container {
+    padding: 3rem 4%;
+}
+
+.profile-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--accent-color);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; 
+    gap: 30px;
+}
+
+.profile-card {
+    background-color: var(--secondary-dark);
+    padding: 30px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.profile-card h3 {
+    color: var(--text-light);
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+/* Panel Biodata */
+.profile-info {
+    text-align: center;
+}
+
+.profile-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid var(--accent-color);
+}
+
+.profile-info h2 {
+    font-size: 1.8rem;
+    color: var(--accent-color);
+}
+
+.username-tag {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.bio-details {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid var(--border-color);
+}
+
+.bio-details p {
+    color: var(--text-muted);
+    margin-bottom: 15px;
+}
+
+.stats span {
+    display: inline-block;
+    background-color: #333;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin: 5px;
+}
+
+/* Detail Edit */
+.detail-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px dotted #444;
+}
+
+.detail-group label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    flex-basis: 30%;
+}
+
+.detail-group p {
+    flex-basis: 50%;
+    color: var(--text-light);
+}
+
+.edit-btn {
+    background: none;
+    border: none;
+    color: var(--accent-color);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* Panel Pengaturan */
+.setting-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #444;
+    transition: background-color 0.2s;
+}
+
+.setting-item:hover {
+    background-color: #2a2a2a;
+    padding: 15px 10px 15px 5px;
+    border-radius: 4px;
+}
+
+.setting-item span {
+    font-weight: 400;
+}
+
+.arrow {
+    font-weight: 800;
+    color: var(--text-muted);
+}
+
+/* Kotak Logout (PENTING) */
+.logout-box {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.logout-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--accent-color);
+    color: var(--text-light);
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.logout-btn:hover {
+    background-color: #c40710; 
+}
+
+.logout-box p {
+    margin-top: 10px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* Responsiveness */
+@media (max-width: 992px) {
+    .profile-grid {
+        grid-template-columns: 1fr; 
+    }
+    .detail-group {
+        flex-wrap: wrap;
+    }
+    .detail-group label, .detail-group p {
+        flex-basis: 100%;
+        text-align: left;
+    }
+    .detail-group label {
+        margin-top: 10px;
+        margin-bottom: 0;
+    }
+    .edit-btn {
+        margin-left: auto;
+    }
+}

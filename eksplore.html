@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eksplorasi Cerita Publik & Top Rating</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/explore.css">
+</head>
+<body>
+    <header class="main-header">
+        <a href="index.html" class="logo">HI READ</a>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="genre-selection.html">Genre</a></li>
+                <li><a href="#top-rating-grid">Top Rating</a></li>
+                <li><a href="profile.html" class="cta-button">Profil</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="explore-container">
+        <section class="top-rating-banner" id="top-rating-grid">
+            <p class="subtitle">EKSKLUSIF</p>
+            <h1>🔥 Top Rating Cerita Bulan Ini</h1>
+            <p class="description">Jelajahi karya-karya terbaik dan terpopuler yang telah memukau ribuan pembaca.</p>
+        </section>
+        <div class="filter-bar">
+            <div class="filter-group">
+                <label for="genre-filter">Filter Genre:</label>
+                <select id="genre-filter" class="dark-select">
+                    <option value="all">Semua Genre</option>
+                    <option value="fantasi">Fantasi</option>
+                    <option value="romantis">Romantis</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="sort-by">Urutkan Berdasarkan:</label>
+                <select id="sort-by" class="dark-select">
+                    <option value="rating">Rating Tertinggi</option>
+                    <option value="newest">Terbaru</option>
+                </select>
+            </div>
+        </div>
+        <section class="story-grid">
+            <a href="#" class="story-card top-rating-card"><img src="img/modelbuku/model1.jpeg" alt="Cover Cerita"><div class="card-info"><h3 class="title">Bintang di Lembah Kelam</h3><p class="author">Oleh: Alex Writer</p><div class="rating">⭐ 4.9 (1.2K)</div></div></a>
+            <a href="#" class="story-card top-rating-card"><img src="img/modelbuku/model2.jpeg" alt="Cover Cerita"><div class="card-info"><h3 class="title">Kode Genetik 78</h3><p class="author">Oleh: Risa Fiksi</p><div class="rating">⭐ 4.8 (980)</div></div></a>
+            <a href="#" class="story-card"><img src="img/modelbuku/model4.jpeg" alt="Cover Cerita"><div class="card-info"><h3 class="title">Misteri Jantung Kota</h3><p class="author">Oleh: Budi Thriller</p><div class="rating">⭐ 4.5 (450)</div></div></a>
+            <a href="#" class="story-card"><img src="img/modelbuku/model5.jpeg" alt="Cover Cerita"><div class="card-info"><h3 class="title">Cinta Takdir yang Hilang</h3><p class="author">Oleh: Lia Romantis</p><div class="rating">⭐ 4.7 (720)</div></div></a>
+            <a href="#" class="story-card"><img src="img/modelbuku/model6.jpeg" alt="Cover Cerita"><div class="card-info"><h3 class="title">Warisan Kuno</h3><p class="author">Oleh: Joko Fantasy</p><div class="rating">⭐ 4.6 (510)</div></div></a>
+        </section>
+    </main>
+</body>
+</html>

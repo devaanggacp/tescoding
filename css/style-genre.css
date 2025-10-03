@@ -1,0 +1,173 @@
+/* style-genre.css */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap');
+
+:root {
+    --primary-dark: #141414;
+    --secondary-dark: #222222;
+    --accent-color: #E50914; 
+    --text-light: #F5F5F5;
+    --text-muted: #AAAAAA;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--primary-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-light);
+}
+
+/* Header (Sama seperti utama) */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 4%;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--accent-color);
+}
+
+.logo strong {
+    color: var(--text-light);
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.main-nav a {
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: var(--accent-color);
+}
+
+.cta-button {
+    background-color: var(--accent-color);
+    color: var(--text-light) !important;
+    padding: 8px 18px;
+    border-radius: 4px;
+    font-weight: 700;
+}
+
+/* Container Genre */
+.genre-container {
+    padding: 3rem 4%;
+}
+
+.genre-intro {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.genre-intro h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: var(--accent-color);
+}
+
+.genre-intro p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+}
+
+/* Grid Genre */
+.genre-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 25px;
+}
+
+.genre-card {
+    position: relative;
+    height: 180px; 
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end; 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.genre-card:hover {
+    transform: scale(1.03);
+    opacity: 0.9;
+}
+
+/* Overlay Gelap di atas background warna */
+.genre-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+    z-index: 1;
+}
+
+.card-content {
+    position: relative;
+    z-index: 2;
+    padding: 15px;
+}
+
+.card-content h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.card-content p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* Pewarnaan Kartu Genre */
+.fantasy-card { background-color: #E50914; } 
+.scifi-card { background-color: #00bcd4; } 
+.romance-card { background-color: #e91e63; } 
+.thriller-card { background-color: #3f51b5; } 
+.horror-card { background-color: #5d4037; } 
+.action-card { background-color: #ff9800; } 
+.classic-card { background-color: #607d8b; } 
+.history-card { background-color: #795548; } 
+
+/* Responsiveness */
+@media (max-width: 900px) {
+    .genre-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    }
+    .genre-intro h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .genre-grid {
+        grid-template-columns: 1fr; 
+    }
+}

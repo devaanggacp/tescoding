@@ -1,0 +1,188 @@
+/* style-signup.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap');
+
+:root {
+    --primary-dark: #141414;
+    --accent-color: #E50914; 
+    --form-bg: rgba(0, 0, 0, 0.7); 
+    --text-light: #F5F5F5;
+    --text-muted: #AAAAAA;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-light);
+    
+    /* BACKGROUND DENGAN GAMBAR UTAMA */
+    /* GANTI PATH INI DENGAN PATH GAMBAR LOKAL ANDA JIKA PERLU */
+    background: url('https://images.unsplash.com/photo-1549728271-f7614d9b3a0e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover;
+}
+
+/* Overlay Gelap Penuh untuk fokus pada formulir */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); 
+    backdrop-filter: blur(4px); 
+    z-index: 1;
+}
+
+/* Header (Logo) */
+.auth-header {
+    padding: 1.5rem 4%;
+    position: relative;
+    z-index: 10; 
+}
+
+.logo {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.logo strong {
+    color: var(--text-light);
+}
+
+/* Kontainer Utama Formulir */
+.signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 85vh;
+    position: relative;
+    z-index: 2; 
+    padding: 20px;
+}
+
+.signup-form-box {
+    background-color: var(--form-bg);
+    padding: 40px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.signup-form-box h2 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+}
+
+/* Input Group */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    color: var(--text-muted);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px;
+    background-color: #333;
+    border: none;
+    border-radius: 4px;
+    color: var(--text-light);
+    font-size: 1rem;
+    outline: none;
+    transition: background-color 0.3s;
+}
+
+.input-group input:focus {
+    background-color: #444;
+}
+
+/* Tombol Submit */
+.auth-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--accent-color);
+    color: var(--text-light);
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.auth-btn:hover {
+    background-color: #f40612;
+}
+
+/* Bagian Bantuan dan Pengalihan */
+.help-section {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    margin-top: 15px;
+    color: var(--text-muted);
+}
+
+.help-section a {
+    color: var(--text-light);
+    text-decoration: none;
+}
+
+.login-redirect {
+    font-size: 1rem;
+    margin-top: 20px;
+    color: var(--text-muted);
+}
+
+.login-redirect a {
+    color: var(--text-light);
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.login-redirect a:hover {
+    color: var(--accent-color);
+}
+
+
+/* style-signup.css */
+
+/* Styling ini akan berlaku untuk <button class="auth-btn"> dan <a class="auth-btn"> */
+.auth-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--accent-color);
+    color: var(--text-light);
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+    /* Tambahan penting agar <a> terlihat seperti tombol penuh */
+    display: block; 
+    text-align: center; 
+}
+
+.auth-btn:hover {
+    background-color: #f40612;
+}
